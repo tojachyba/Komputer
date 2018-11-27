@@ -24,12 +24,15 @@ void command(string& line, vector<char>& transistors, string& buffor, string& wy
 		if (number > 324) {
 			number = 324;
 		}
+# ZAPISZ0
 		if (commandS == '0') {
 			transistors[number] = 0;
 		}
+# ZAPISZ1
 		if (commandS == '1') {
 			transistors[number] = 1;
 		}
+# ODWROC
 		if (commandS == '2') {
 			if (transistors[number] == 0) {
 				transistors[number] = 1;
@@ -38,14 +41,17 @@ void command(string& line, vector<char>& transistors, string& buffor, string& wy
 				transistors[number] = 0;
 			}
 		}
+# DODAJ DO BUFORA
 		if (commandS == '3') {
 			if (buffor.length() < 32) {
 				buffor += to_string(transistors[number]);
 			}
 		}
+# PRZELICZ BUFOR
 		if (commandS == '4') {
 			wyswietlacz = buffor + " - " + to_string(decy(buffor));
 		}
+# WYCZYSC BUFOR
 		if (commandS == '5') {
 			buffor = "";
 		}
