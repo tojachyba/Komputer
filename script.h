@@ -2,20 +2,11 @@
 #include <vector>
 
 using namespace std;
-void backwards(string& buff) {
-	string stringek = "";
-	for (int i = buff.length()-1; i >= 0; i--) {
-		stringek += buff[i];
-	}
-	buff = stringek;
-}
-
 int decy(string bin) {
-	int liczba = 0;
-	backwards(bin);
-	for (int i = 0; i < int(bin.length()); i++) {
+	unsigned int liczba = 0;
+	for (int i = int(bin.length()); i >= 0; i--) {
 		if (bin[i] == '1') {
-			liczba += int(pow(2, i));
+			liczba += int(pow(2, int(bin.length()) - (i + 1)));
 		}
 	}
 	return liczba;

@@ -55,9 +55,10 @@ int main() {
 				window->close();
 			}
 
-			if (e.type == e.KeyPressed) {
+			else if (e.type == e.KeyPressed) {
 
 				if (e.key.code == Keyboard::F4) {
+					BUFFOR = "";
 					DISPLAY = "";
 					loop = 0;
 					running = false;
@@ -75,7 +76,7 @@ int main() {
 						}
 
 						transistors.resize(size);
-						for (int i = 0; i < size-1; i++) {
+						for (int i = 0; i <= size; i++) {
 							transistors[i] = 0;
 						}
 						declared = true;
